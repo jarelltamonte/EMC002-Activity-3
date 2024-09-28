@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css'
 
 const Cart = ({ cartItems, setCartItems }) => {
 
@@ -12,7 +13,7 @@ const Cart = ({ cartItems, setCartItems }) => {
   };
 
   return (
-    <div>
+    <div className="cart">
       <h2>Your Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty</p>
@@ -21,7 +22,9 @@ const Cart = ({ cartItems, setCartItems }) => {
           {cartItems.map(item => (
             <li key={item.product.id}>
               {item.product.name} - {item.quantity} x ${item.product.price}
-              <button onClick={() => removeFromCart(item.product.id)}>Remove</button>
+              <div className="button-cart">
+               <button className="button-remove" onClick={() => removeFromCart(item.product.id)}>Remove</button>
+              </div>
             </li>
           ))}
         </ul>

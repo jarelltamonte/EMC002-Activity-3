@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import '../App.css'
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -29,16 +30,22 @@ const ProductDetailPage = () => {
   if (!product) return <h2>Product not found</h2>;
 
   return (
-    <div>
-      <h2>{product.name}</h2>
-      <img src={product.image} alt={product.name} />
-      <p>{product.description}</p>
-      <p>${product.price}</p>
-      <label>
-        Quantity: 
-        <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
-      </label>
-      <button onClick={addToCart}>Add to Cart</button>
+    <div className="poduct-deets">
+      <div className="pic">
+        <img src={product.image} alt={product.name} className="product-image" />
+      </div>
+      <div className="info">
+        <h2>{product.name}</h2>
+        <p>{product.description}</p>
+        <p className="price">${product.price}</p>
+        <label>
+          Quantity: 
+          <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+        </label>
+        <div className="button-container">
+          <button className="button-add" onClick={addToCart}>Add to Cart</button>
+        </div>
+      </div>
     </div>
   );
 };
