@@ -7,6 +7,24 @@
   pointer-events: none;
 }
 
+footer {
+  background-color: antiquewhite !important;
+  color: black !important;
+}
+
+.product-item {
+  height: 30vh;
+  width: 20vw !important;
+
+}
+
+.product-list{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

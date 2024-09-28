@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductItem from './ProductItem';
+import '../App.css'
 
 const ProductList = ({ products }) => (
   <div className="product-list">
